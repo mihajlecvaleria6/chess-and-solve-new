@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>chess-and-solve</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <header class="header">
+        <h1>Логічна гра "Коні"</h1>
+        <p class="subtitle">
+          Розставте якомога більше коней так, щоб кожен бив рівно двох інших
+        </p>
+      </header>
+
+      <div class="stats-panel">
+        <div class="stat-item">
+          <span class="stat-label">Поставлено коней:</span>
+          <span
+            class="stat-value"
+            id="knight-count"
+            >0</span
+          >
+        </div>
+      </div>
+
+      <div class="board-wrapper">
+        <div
+          class="attack-lines"
+          id="attack-lines"
+        ></div>
+        <div
+          class="board"
+          id="board"
+        ></div>
+      </div>
+
+      <div class="controls">
+        <button
+          class="btn btn-primary"
+          id="btn-check"
+        >
+          <span class="btn-icon">✓</span>
+          Перевірити рішення
+        </button>
+        <button
+          class="btn btn-secondary"
+          id="btn-solution"
+        >
+          <span class="btn-icon">💡</span>
+          Показати рішення
+        </button>
+        <button
+          class="btn btn-outline"
+          id="btn-clear"
+        >
+          <span class="btn-icon">🗑️</span>
+          Очистити
+        </button>
+      </div>
+
+      <div class="rules">
+        <h3>Правила гри</h3>
+        <ul>
+          <li>Натисніть на клітинку, щоб поставити або прибрати коня</li>
+          <li>
+            Кінь ходить буквою «Г»: 2 клітинки в одному напрямку і 1
+            перпендикулярно
+          </li>
+          <li>
+            Кожен кінь повинен атакувати <strong>рівно двох</strong> інших коней
+          </li>
+          <li>
+            <span class="status-red">Червоний кінь</span> — умова не виконується
+          </li>
+          <li>
+            <span class="status-green">Зелений кінь</span> — умова виконується
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="message-overlay"
+        id="message-overlay"
+      >
+        <div class="message-box">
+          <div
+            class="message-icon"
+            id="message-icon"
+          >
+            🎉
+          </div>
+          <h2
+            class="message-title"
+            id="message-title"
+          >
+            Вітаємо!
+          </h2>
+          <p
+            class="message-text"
+            id="message-text"
+          ></p>
+          <button
+            class="btn btn-primary"
+            id="btn-close-message"
+          >
+            Грати знову
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="/src/main.js"
+    ></script>
+  </body>
+</html>
